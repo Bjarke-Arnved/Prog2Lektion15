@@ -1,5 +1,7 @@
 package opgave02;
 
+import com.sun.javafx.scene.SceneUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -22,6 +24,10 @@ public class Main {
                 if(c == 'i') count++;
             }
             if(count >= 2) return true;
+            else return false;
+        }));
+        System.out.println("De første person som har et navn der er lige så lang som deres alder: " + peopleArray.findFirst(p -> {
+            if(p.getName().length() == p.getAge()) return true;
             else return false;
         }));
         //Indsæt kode herunder der kalder metoderne findFirst og findAll som beskrevet i opgave 1
