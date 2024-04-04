@@ -12,8 +12,18 @@ public class Main {
 
         //Den første person der hedder Klaus
         System.out.println("Den første person der hedder Klaus: " + peopleArray.findFirst(p -> p.getName().equals("Klaus")));
+        System.out.println("Den første person der er 44 år er " + peopleArray.findFirst(p -> p.getAge() == 44));
         //Den første person der har et navn med længden 4
         System.out.println("Den første person der har et navn med længden 4: " + peopleArray.findFirst(p -> p.getName().length() == 4));
+        System.out.println("Den første person der hvis navn starter med S: " + peopleArray.findFirst(p -> p.getName().startsWith("S")));
+        System.out.println("Den person der har mere end et i i deres navn: " + peopleArray.findFirst(p -> {
+            int count = 0;
+            for(char c : p.getName().toCharArray()) {
+                if(c == 'i') count++;
+            }
+            if(count >= 2) return true;
+            else return false;
+        }));
         //Indsæt kode herunder der kalder metoderne findFirst og findAll som beskrevet i opgave 1
 
     }
